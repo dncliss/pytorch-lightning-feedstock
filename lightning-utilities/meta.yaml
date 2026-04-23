@@ -10,7 +10,7 @@ source:
   sha256: 9e31617eccbbadc6b737a2432fd7076ff8e24957f9c63aeba2530b189e19319c
 
 build:
-  number: 3
+  number: 4
   noarch: python
   string: pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
   script: {{ PYTHON }} -m pip install . -vv
@@ -24,12 +24,12 @@ requirements:
     - fire
     - packaging
     - typing_extensions >=4.0,<5
-    - setuptools >=78.1.1  #[x86_64]
+    - setuptools <81       #[x86_64]
     - setuptools           #[not x86_64]
 test:
   requires:
     - typing_extensions >=4.0,<5
-    - setuptools >=78.1.1  #[x86_64]
+    - setuptools <81       #[x86_64]
     - setuptools           #[not x86_64]
 
   imports:
